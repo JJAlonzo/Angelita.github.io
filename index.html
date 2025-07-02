@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para mi princesa </title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fce4ec;
+        }
+
+        .screen {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        .password-screen {
+            flex-direction: column;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            gap: 10px;
+            margin-top:10px;
+            justify-content: center;
+        }
+
+        .key {
+            background-color: #f8bbd0;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .key:hover {
+            background-color: #cf309f;
+        }
+
+        .input-display {
+            font-size: 24px;
+            margin-top: 10px;
+            letter-spacing: 8px;
+        }
+
+        .notepad {
+            background-color: #fff0f6;
+            border: 3px solid #f8bbd0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.6;
+        }
+
+        .notepad h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="passwordScreen" class="screen password-screen active">
+        <h2>🔒 Ingrese la Contraseña </h2>
+        <h2>🔒Prista es una fecha muy importante para los dos</h2>
+        <div class="input-display" id="inputDisplay">••••••••</div>
+        <div class="keypad">
+            <button class="key" onclick="enterDigit('1')">1</button>
+            <button class="key" onclick="enterDigit('2')">2</button>
+            <button class="key" onclick="enterDigit('3')">3</button>
+            <button class="key" onclick="enterDigit('4')">4</button>
+            <button class="key" onclick="enterDigit('5')">5</button>
+            <button class="key" onclick="enterDigit('6')">6</button>
+            <button class="key" onclick="enterDigit('7')">7</button>
+            <button class="key" onclick="enterDigit('9')">9</button>
+            <button class="key" onclick="enterDigit('8')">8</button>
+            <div></div>
+            <button class="key" onclick="enterDigit('0')">0</button>
+            <div></div>
+        </div>
+    </div>
+    <div id="notepadScreen" class="screen">
+        <div class="notepad">
+             <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+              <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+             <p>
+                .
+            </p>
+             <p>
+                .
+            </p>
+              <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+              <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+              <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+              <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                            ⠀ 
+                                ⢾⣿⣿⣿⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣶⣿⣿⣿⣿⡇
+                                ⠈⢿⣿⣿⣿⡛⠛⠈⠳⣄⠀⠀⠀⠀⠀⠀⣠⠞⠉⠛⢻⣿⣿⣿⡟⠀
+                                ⠀⠸⣿⣿⣿⠥⠀⠀⠀⠈⢢⠀⠀⠀⠀⡜⠁⠀⠀⠀⠀⢸⣿⣿⣿⠁⠀
+                                ⠀⠀⣿⣿⣯⠭⠤⠀⠀⠀⠀⠃⣰⡄⠌⠀⠀⠀⠀⠨⢭⣿⣿⣿⠀⠀
+                                ⠀⠀⠹⢿⣿⣈⣀⣀⠀⠀⠠⢴⣿⣿⡦⠀⠀⠀⣀⣈⣱⣿⠿⠃⠀⠀
+                                ⠀⠀⠀⢠⣾⣿⡟⠁⠀⠀⠀⠀⣿⣏⠀⠀⠀⠀⠘⣻⣿⣶⠀⠀⠀⠀
+                                ⠀⠀⠀⢸⣿⣿⢂⠀⠀⠀⠀⠘⢸⡇⠆⠀⠀⠀⢀⠰⣿⣿⠀⠀⠀⠀
+                                ⠀⠀⠀⠈⣿⣷⣿⣆⡀⠀⠀⠁⠈⠀⠠⠀⠀⢀⣶⣿⣿⠏⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠘⣿⣿⣿⣷⣴⡜⠀⠀⠀⠀⣦⣤⣾⣿⣿⡏⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⢀⡿⠛⠿⠿⠛⠁⠀⠀⠀⠀⠘⠿⠿⠿⠿⢧⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀
+            </p>
+            
+            <h3>📅 18 Junio 2022 </h3>
+            <h3>📅 01 Junio 2024 </h3>
+             <h3>📅 01 Julio 2025 </h3>
+            <h4>💌 Mi querida Chinita </h4>
+            <p>
+                Quiero que sepa lo feliz que soy por tenerla en mi vida. Desde que llego, todo cambió para mejor.
+                Me hace sentir amado, cuidado y acompañado de una forma que nunca antes había sentido.
+                Gracias mi corazón de melon la amo demaciado mi princesita hermosa.
+            </p>
+            <p>
+                A su lado aprendí lo que es el amor verdadero, ese que se demuestra con acciones, con palabras sinceras
+                y con esos pequeños detalles que hacen la diferencia. Gracias por estar siempre conmigo, por darme su
+                tiempo, su cariño y tu comprensión.
+            </p>
+            <p>
+                No sé cómo explicarlo, pero con usted mi corazón está en paz. Es mi alegría diaria
+                y la razón de tantas sonrisas.
+            </p>
+            <p>
+                La amo profundamente. ♡
+            </p>
+
+            <p>
+                Porque todo lo que siento por usted parece más grande que las palabras, más profundo que cualquier silencio. Pero quiero intentarlo, porque 
+                merece saber lo que provoca en mí. Desde que llegó a mi vida, algo cambió. No fue solo
+                su sonrisa, ni su forma de mirar el mundo, ni siquiera su manera de abrazarme como si
+                quisieras curar todas mis heridas. Fue todo. Fue usted mi chaparrita. 
+            </p>
+            <p>
+                ♡ Fue usted enseñándome que el amor no tiene que doler, que puede ser un refugio. Que 
+                se puede respirar en paz mientras se ama con intensidad. Con usted descubrí que el 
+                amor no es solo besar fuerte o extrañar con desesperación. Es quedarse cuando hay 
+                tormenta. Es cuidar los silencios. Es mirar juntos hacia el mismo horizonte, incluso 
+                cuando el camino se pone difícil.  ♡
+            </p>
+            <p>
+                Y su, amor, se ha quedado. Me ha sostenido, incluso cuando yo mismo sentí que me perdía. 
+                He aprendido a amar no solo cuando ríe, sino también cuando llora. No solo cuando me dice 
+                "Lo amo", sino cuando me escucha, cuando me perdona, cuando me elige todos los días sin 
+                promesas grandiosas, solo con actos sencillos que gritan "estoy aquí". Quiero quedarme 
+                con usted. No porque lo necesites, sino porque la elijo. Porque cada día con usted es 
+                un capítulo que vale la pena vivir. Porque su amor me hace mejor, me hace fuerte, me hace 
+                verdadero. 
+            </p>
+
+            <p>
+               Gracias por existir. Gracias por enseñarme que el amor no es solo emoción, es decisión. 
+               Y yo, hoy y siempre, he decidido amarla. Con todo lo que soy. Con lo que fui. Y con lo 
+               que aún no he descubierto de mí, pero quiero compartir con usted la amo demasiado mi
+                princesita hermosa es mi todo. 
+            </p>
+              <p>
+              https://open.spotify.com/track/3uqDUUqiVrtbKakobkPXmv?si=y5MMyvVDSHaHWb7zMaKbow 
+               </p>
+              <p>
+                Espero le guste mi amor 
+
+              </p>  
+              <p>
+                              https://open.spotify.com/track/7u6mbnlARiA51m5aMkIbzX?si=XQcqc5fZS3ueh1aXorH3QA 
+            </p>
+             <h4>💌 LA AMO DE UNA FORMA QUE NO SE IMAGINA MI CORAZON 💌 </h4>   
+        </div>
+    </div>
+    <script>
+        const correctPassword = '18062022';
+        let input = '';
+        function enterDigit(digit) {
+            if (input.length <= 8) {
+                input += digit;
+            }
+            const display = document.getElementById('inputDisplay');
+            display.textContent = input.padEnd(8, '•');
+            if (input.length === 8) {
+                if (input === correctPassword) {
+                    document.getElementById('passwordScreen').classList.remove('active');
+                    document.getElementById('notepadScreen').classList.add('active');
+                } else {
+                    alert('Contraseña incorecta MI AMOR, ES UNA FECHA IMPORTANTE, MUY IMPORTANTE');
+                    input = '';
+                    display.textContent = '••••••••';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
